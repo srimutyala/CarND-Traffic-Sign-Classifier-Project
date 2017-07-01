@@ -53,7 +53,7 @@ Several pre-processing techniques have been considered for this project and almo
 3.	Contrast enhancement, histogram equalization (CLAHE), image sharpening
 4.	Image normalization
 
-In the end, I decided to keep the image in the RGB space with just image normalization being the only transformation done.
+In the end, I decided to keep the image in the RGB space with just image normalization being the only transformation done. 
 
 
 ###Design and Test a Model Architecture
@@ -83,6 +83,7 @@ My final model results were:
 * validation set accuracy of ? 
 * test set accuracy of ?
 
+(The excel file 'ExperimentalLog' conatins a few iterations of the scenarios tested & discarded)
 
 ###Test a Model on New Images
 
