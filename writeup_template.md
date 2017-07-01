@@ -73,7 +73,7 @@ I started out with lenet as a baseline and started experimenting with some addit
 | Fully Connected w/ RELU & Dropout				| outputs x120        									|
 |	Fully Connected						|outputs x43												|
  
-The model is trained for 10 epochs with batch size of 128. The learning rate is set to 0.0002. The final validation accuracy is 95.4% & the test accuracy is .
+The model is trained for 10 epochs with batch size of 128. The learning rate is set to 0.0002. The final validation accuracy is 93.5% & the test accuracy is 93.1%.
 
 (The excel file 'ExperimentalLog' conatins a few iterations of the model that were tested & discarded)
 
@@ -97,10 +97,10 @@ Here are the results of the prediction:
 | No Entry					| No Entry											|
 | Right turn	      		| Ahead Only					 				|
 | Road Work			| Road Work      							|
-| Pedestrain & Bicycle Path			| Roundabout Mandatory      							|
+| Pedestrain & Bicycle Path			| Road Work      							|
 
 
-The model was able to correctly guess 4 of the 6 traffic signs, which gives an accuracy of 66.67%. This is worse than the test accuracy of 95.4%.
+The model was able to correctly guess 4 of the 6 traffic signs, which gives an accuracy of 66.67%. This is worse than the test accuracy of 93.5%.
 
 
 We used softmax & top_k to see the top 5 probabilities for each of those additional images. However, in the case of each of those images (including the ones incorrectly classified), the highest probability is 1. It wasn't expected but that's what the model determined.
