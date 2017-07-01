@@ -32,7 +32,7 @@ The goals / steps of this project are the following:
 
 ###Data Set Summary & Exploration
 
-The dataset is divided into 3 portions, training, validation & test. We train the model on the training test, use the validation to check for error rate and adjust until satisfied. Finally, the model’s accuracy is tested against test set which the model hasn’t seen before.
+The dataset is divided into 3 portions, training, validation & test. We train the model on the training test, use the validation to check for error rate and adjust until satisfied. Finally, the model’s accuracy is tested against the test set which the model hasn’t seen before.
 
 Some details regarding the dataset:
 Number of training examples = 34799
@@ -59,42 +59,34 @@ In the end, I decided to keep the image in the RGB space with just image normali
 ###Design and Test a Model Architecture
 
 MODEL:
-I started out with lenet as a baseline and started experimenting with some additional layers to it. One significant addition was the Inception module. This raised the accuracy of the model. After a few trial and error runs involving different number of inception layers, pooling & fully connected layers, I arrived at my final model.
+I started out with lenet as a baseline and started experimenting with some additional layers to it. One significant addition was the Inception module. This raised the accuracy of the model. After a few trial and error runs involving different number of inception layers, pooling (max & avg) & fully connected layers, I arrived at my final model.
 
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
 | Convolution w/RELU     	| 1x1 stride, valid padding, outputs 28x28x6 	|
-| Convolution w/RELU					|		1x1 stride, valid padding, outputs 10x10x48										|
-| Inception w/ Max Pooling		      	| outputs 12x12x128 				|
-| Inception w/ Max Pooling		    | outputs 6x6x256      									|
-| Convolution					|		1x1 stride, valid padding, outputs 6x6x96									|
-| Flatten		| output 400        									|
-| Fully Connected w/ RELU & Dropout				| outputs 6x6x120        									|
+| Convolution w/RELU					|		1x1 stride, valid padding, outputs 24x24x48										|
+| Inception w/ Max Pooling		      	| outputs 12x12x96 				|
+| Convolution					|		1x1 stride, valid padding, outputs 12x12x48									|
+| Flatten		| output 6912        									|
+| Fully Connected w/ RELU & Dropout				| outputs x120        									|
 |	Fully Connected						|outputs x43												|
-|						|												|
  
-The model is trained for 30 epochs with batch size of 128. The learning rate is set to 0.0002.
+The model is trained for 10 epochs with batch size of 128. The learning rate is set to 0.0002. The final validation accuracy is 95.4% & the test accuracy is .
 
-
-My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
-
-(The excel file 'ExperimentalLog' conatins a few iterations of the scenarios tested & discarded)
+(The excel file 'ExperimentalLog' conatins a few iterations of the model that were tested & discarded)
 
 ###Test a Model on New Images
 
-A search for German sign images on the internet yielded a few signs that ranged from decent to bad quality. A few were handpicked(with varying degrees of quality) and resized to 32x32x3. The model was run on these images are the results are presented below.
+A search for German sign images on the internet yielded a few signs that ranged from decent to bad quality. A few were handpicked(with varying degrees of quality) and resized to 32x32x3. The model was run on these images and the results are presented below.
 
 ![alt text][image10] ![alt text][image11] ![alt text][image12] 
 ![alt text][image13] ![alt text][image14] ![alt text][image15]
 
-Images 1, 2, 3, & 5 were predicted accurately but images 4 & 6 were not. Based on a quick look at the images itself reveals that the accuractely predicted ones has distinct features that are apparent to human eye(color, shape) wheres as the images that could not be determined accurately have colors that seem to blend in the background (sky).
+Images 1, 2, 3, & 5 were predicted accurately but images 4 & 6 were not. Based on a quick look at the images itself reveals that the accurately predicted ones have distinct features that are apparent to human eye (color, shape) wheres as the images that could not be determined accurately have colors that seem to blend into the background (sky).
 
-Comparing selective images from the internet against a standard set( test data set in this case) might be very good indicative of the model's accuracy. While looking at different such non-standard images, it seems the model is very well-adpated to scenes with perspective change, multiple signs in the image and any damage to the sign( dirt, paper stuck to the sign, etc). 
+Comparing selective images from the internet against a standard set( test data set in this case) might not be a very good indicative of the model's accuracy. While looking at different such non-standard images, it seems the model might not ve very well-adpated to scenes with perspective change, multiple signs in the image and any damage to the sign( dirt, paper stuck to the sign, etc). 
 
 Here are the results of the prediction:
 
@@ -108,10 +100,10 @@ Here are the results of the prediction:
 | Pedestrain & Bicycle Path			| Roundabout Mandatory      							|
 
 
-The model was able to correctly guess 4 of the 6 traffic signs, which gives an accuracy of 66.67%. This is worse than the test accuracy of X.
+The model was able to correctly guess 4 of the 6 traffic signs, which gives an accuracy of 66.67%. This is worse than the test accuracy of 95.4%.
 
 
-In the all the test images (including the ones incorrectly classified), the highest probability is 1. It wasn't expected but that's what the model determined.
+We used softmax & top_k to see the top 5 probabilities for each of those additional images. However, in the case of each of those images (including the ones incorrectly classified), the highest probability is 1. It wasn't expected but that's what the model determined.
 
 
 
