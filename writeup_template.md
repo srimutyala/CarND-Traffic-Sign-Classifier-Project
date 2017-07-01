@@ -23,6 +23,12 @@ The goals / steps of this project are the following:
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
 [image9]: ./index.png "Data 1"
+[image10]: ./images-small/1.jpg "Traffic Sign 1"
+[image11]: ./images-small/2.jpg "Traffic Sign 2"
+[image12]: ./images-small/3.jpg "Traffic Sign 3"
+[image13]: ./images-small/4.jpg "Traffic Sign 4"
+[image14]: ./images-small/5.jpg "Traffic Sign 5"
+[image15]: ./images-small/6.jpg "Traffic Sign 6"
 
 ###Data Set Summary & Exploration
 
@@ -82,25 +88,26 @@ My final model results were:
 
 A search for German sign images on the internet yielded a few signs that ranged from decent to bad quality. A few were handpicked(with varying degrees of quality) and resized to 32x32x3. The model was run on these images are the results are presented below.
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][image10] ![alt text][image11] ![alt text][image12] 
+![alt text][image13] ![alt text][image14] ![alt text][image15]
 
-The first image might be difficult to classify because ...
+Images 1, 2, 3, & 5 were predicted accurately but images 4 & 6 were not. Based on a quick look at the images itself reveals that the accuractely predicted ones has distinct features that are apparent to human eye(color, shape) wheres as the images that could not be determined accurately have colors that seem to blend in the background (sky).
 
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+Comparing selective images from the internet against a standard set( test data set in this case) might be very good indicative of the model's accuracy. While looking at different such non-standard images, it seems the model is very well-adpated to scenes with perspective change, multiple signs in the image and any damage to the sign( dirt, paper stuck to the sign, etc). 
 
 Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Keep Right      		| Kee Right   									| 
+| Priority Road     			| Priority Road 										|
+| No Entry					| No Entry											|
+| Right turn	      		| Ahead Only					 				|
+| Road Work			| Road Work      							|
+| Pedestrain & Bicycle Path			| Roundabout Mandatory      							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 4 of the 6 traffic signs, which gives an accuracy of 66.67%. This is worse than the test accuracy of X.
 
 
 For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
