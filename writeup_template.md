@@ -110,18 +110,7 @@ Here are the results of the prediction:
 The model was able to correctly guess 4 of the 6 traffic signs, which gives an accuracy of 66.67%. This is worse than the test accuracy of X.
 
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
-
-
-For the second image ... 
+In the all the test images (including the ones incorrectly classified), the highest probability is 1. It wasn't expected but that's what the model determined.
 
 
 
