@@ -95,15 +95,41 @@ Here are the results of the prediction:
 | Keep Right      		| Kee Right   									| 
 | Priority Road     			| Priority Road 										|
 | No Entry					| No Entry											|
-| Right turn	      		| Ahead Only					 				|
+| Turn right ahead	      		| Turn right ahead					 				|
 | Road Work			| Road Work      							|
 | Pedestrain & Bicycle Path			| Road Work      							|
 
 
-The model was able to correctly guess 4 of the 6 traffic signs, which gives an accuracy of 66.67%. This is worse than the test accuracy of 93.5%.
+The model was able to correctly guess 5 of the 6 traffic signs, which gives an accuracy of 83.33%. This is worse than the test accuracy of 93.5%.
 
 
-We used softmax & top_k to see the top 5 probabilities for each of those additional images. However, in the case of each of those images (including the ones incorrectly classified), the highest probability is 1. It wasn't expected but that's what the model determined.
+We used softmax & top_k to see the top 5 probabilities for each of those additional images. The probabilities and the corresponding labels for these are listed below. At a quick glance, we can see that the probabilities for the first 5 accurately predicted images are close to 1 where as the last one(predicted inaccurately) has a probability of 0.6.
+
+Edit: Looking through the training dataset, the last image is not a part of 43 provided labels for the sign. Since there is not training for this particular sign, the model obviosuly failed to recognize it and tried to provide the best match.
+
+[  1.00000000e+00   1.72765922e-24   5.65642676e-29   1.65495611e-34
+   9.46601623e-36]
+['Keep right', 'Turn left ahead', 'Road work', 'Bumpy road', 'Dangerous curve to the right']
+
+[  1.00000000e+00   2.38376904e-15   1.30654581e-16   3.35488575e-17
+   3.21168788e-17]
+['Priority road', 'End of all speed and passing limits', 'No vehicles', 'End of no passing by vehicles over 3.5 metric tons', 'No passing']
+
+[  1.00000000e+00   3.46826623e-10   3.79998567e-11   7.76918113e-12
+   7.68914619e-12]
+['No entry', 'Priority road', 'Road work', 'No passing', 'Double curve']
+
+[  7.13666499e-01   2.86146522e-01   1.76409230e-04   4.29482361e-06
+   2.53876442e-06]
+['Turn right ahead', 'Ahead only', 'Roundabout mandatory', 'Go straight or right', 'Turn left ahead']
+
+[  1.00000000e+00   2.31675096e-12   4.21001463e-14   1.05129833e-15
+   1.94352729e-16]
+['Road work', 'Yield', 'Bicycles crossing', 'Speed limit (80km/h)', 'Go straight or right']
+
+[  6.02692246e-01   2.81043440e-01   8.42467174e-02   3.20172124e-02
+   3.22023681e-07]
+['Keep right', 'End of no passing', 'General caution', 'Roundabout mandatory', 'Go straight or left']
 
 
 
