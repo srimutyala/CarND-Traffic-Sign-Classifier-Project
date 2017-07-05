@@ -103,9 +103,9 @@ Here are the results of the prediction:
 The model was able to correctly guess 5 of the 6 traffic signs, which gives an accuracy of 83.33%. This is worse than the test accuracy of 93.5%.
 
 
-We used softmax & top_k to see the top 5 probabilities for each of those additional images. The probabilities and the corresponding labels for these are listed below. At a quick glance, we can see that the probabilities for the first 5 accurately predicted images are close to 1 where as the last one(predicted inaccurately) has a probability of 0.6.
+We used softmax & top_k to see the top 5 probabilities for each of those additional images. The probabilities and the corresponding labels for these are listed below. At a quick glance, we can see that the probabilities for the first 5 accurately predicted images are close to 1 (except for 1 which still had the highest probability for the correct label). 
 
-Edit: Looking through the training dataset, the last image is not a part of 43 provided labels for the sign. Since there is not training for this particular sign, the model obviosuly failed to recognize it and tried to provide the best match.
+Edit: Looking through the training dataset, the last image is not a part of 43 provided labels for the sign. Since there is no training for this particular sign, the model obviosuly failed to recognize it and tried to provide the best match.
 
 [  1.00000000e+00   1.25504102e-24   2.73641724e-29   3.13950730e-30
    2.89225918e-31]
