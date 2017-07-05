@@ -107,29 +107,36 @@ We used softmax & top_k to see the top 5 probabilities for each of those additio
 
 Edit: Looking through the training dataset, the last image is not a part of 43 provided labels for the sign. Since there is not training for this particular sign, the model obviosuly failed to recognize it and tried to provide the best match.
 
-[  1.00000000e+00   1.72765922e-24   5.65642676e-29   1.65495611e-34
-   9.46601623e-36]
-['Keep right', 'Turn left ahead', 'Road work', 'Bumpy road', 'Dangerous curve to the right']
+[  1.00000000e+00   1.25504102e-24   2.73641724e-29   3.13950730e-30
+   2.89225918e-31]
+   
+['Keep right', 'Turn left ahead', 'Go straight or right', 'Speed limit (60km/h)', 'Roundabout mandatory']
 
-[  1.00000000e+00   2.38376904e-15   1.30654581e-16   3.35488575e-17
-   3.21168788e-17]
-['Priority road', 'End of all speed and passing limits', 'No vehicles', 'End of no passing by vehicles over 3.5 metric tons', 'No passing']
+[  1.00000000e+00   2.22400761e-11   1.09336612e-13   1.35595863e-14
+   6.95945817e-15]
+   
+['Priority road', 'Yield', 'Turn left ahead', 'End of no passing by vehicles over 3.5 metric tons', 'No vehicles']
 
-[  1.00000000e+00   3.46826623e-10   3.79998567e-11   7.76918113e-12
-   7.68914619e-12]
-['No entry', 'Priority road', 'Road work', 'No passing', 'Double curve']
+[  1.00000000e+00   5.34872945e-11   3.96101641e-12   6.92277941e-13
+   2.71545536e-13]
+   
+['No entry', 'Priority road', 'No passing', 'Speed limit (50km/h)', 'Speed limit (30km/h)']
 
-[  7.13666499e-01   2.86146522e-01   1.76409230e-04   4.29482361e-06
-   2.53876442e-06]
-['Turn right ahead', 'Ahead only', 'Roundabout mandatory', 'Go straight or right', 'Turn left ahead']
+[  5.83146513e-01   4.13416594e-01   2.19251378e-03   6.61697995e-04
+   5.23580762e-04]
+   
+['Turn right ahead', 'Ahead only', 'Turn left ahead', 'Road work', 'Go straight or right']
 
-[  1.00000000e+00   2.31675096e-12   4.21001463e-14   1.05129833e-15
-   1.94352729e-16]
-['Road work', 'Yield', 'Bicycles crossing', 'Speed limit (80km/h)', 'Go straight or right']
+[  1.00000000e+00   1.17906702e-13   2.50709338e-16   2.11312618e-16
+   9.34069408e-19]
+   
+['Road work', 'Stop', 'No entry', 'Wild animals crossing', 'Bumpy road']
 
-[  6.02692246e-01   2.81043440e-01   8.42467174e-02   3.20172124e-02
-   3.22023681e-07]
-['Keep right', 'End of no passing', 'General caution', 'Roundabout mandatory', 'Go straight or left']
+[  9.99984384e-01   1.46937218e-05   8.88643854e-07   9.18414500e-09
+   5.17244303e-10]
+   
+['Roundabout mandatory', 'Keep right', 'Priority road', 'Go straight or right', 'Ahead only']
+
 
 
 
